@@ -34,12 +34,17 @@
     .lang-switch a:hover { background: #e6f0ee; }
     section { margin-bottom: 40px; }
     h2 { font-size: 18px; font-weight: 700; color: #00473e; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #e9e8e4; }
+    h3 { font-size: 15px; font-weight: 700; color: #00473e; margin: 16px 0 8px; }
     p { margin-bottom: 12px; }
     ul { padding-left: 20px; margin-bottom: 12px; }
     li { margin-bottom: 6px; }
     .divider { border: none; border-top: 3px solid #e9e8e4; margin: 48px 0; }
     .updated { font-size: 13px; color: #999; margin-top: 8px; }
     strong { color: #00473e; }
+    .callout {
+      background: #e6f0ee; border-left: 4px solid #00473e; border-radius: 6px;
+      padding: 12px 16px; margin-bottom: 16px; font-size: 15px;
+    }
     footer { margin-top: 48px; font-size: 13px; color: #999; border-top: 1px solid #e9e8e4; padding-top: 24px; }
   </style>
 </head>
@@ -61,7 +66,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">最終更新日：2025年5月29日</p>
+  <p class="updated">最終更新日：2026年6月10日</p>
 
   <section>
     <h2>1. はじめに</h2>
@@ -69,7 +74,18 @@
   </section>
 
   <section>
-    <h2>2. 収集する情報</h2>
+    <h2>2. 基本方針 — デフォルトでは外部送信なし</h2>
+    <div class="callout">
+      あなたの利用データは<strong>初期設定ではデバイスの外に一切送信されません</strong>。外部との通信が発生するのは、次の2つの場合に限られます。
+    </div>
+    <ul>
+      <li><strong>匿名の利用統計（オプトイン）</strong> — あなたが明示的に同意した場合にのみ送信されます（第4条）</li>
+      <li><strong>Pro プランの決済とライセンス確認</strong> — 有料プランをご利用の場合のみ発生します（第5条）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. 収集する情報（デバイス内に保存）</h2>
     <p>本拡張機能は、以下の情報をお客様のデバイス上にローカルに記録します。</p>
     <ul>
       <li>Google スプレッドシート上での<strong>操作の種別と回数</strong>（マウス操作・キーボードショートカット使用）</li>
@@ -80,37 +96,93 @@
   </section>
 
   <section>
-    <h2>3. 情報の利用目的</h2>
-    <p>収集した情報は、ショートカットキーの習得支援および拡張機能の機能提供のみを目的として使用します。収集したデータをマーケティングや広告に利用することはありません。</p>
+    <h2>4. 匿名の利用統計（オプトイン・任意）</h2>
+    <p>本拡張機能の改善のため、<strong>匿名の利用統計の送信にご協力いただける場合のみ</strong>、最小限の統計データを当方が運用するサーバー（Cloudflare 上でホスト）に送信します。</p>
+    <h3>初期設定はオフです</h3>
+    <ul>
+      <li>同意するまで、統計データは<strong>1バイトも送信されません</strong></li>
+      <li>同意した後も、設定画面から<strong>いつでもオフ</strong>にできます</li>
+    </ul>
+    <h3>同意した場合に送信される情報</h3>
+    <ul>
+      <li>ランダムに生成された識別子（UUID。Googleアカウント等とは無関係）</li>
+      <li>拡張機能のバージョン・OS種別・表示言語</li>
+      <li>インストールからの経過日数</li>
+      <li>操作回数の<strong>日次集計値</strong>（マウス操作数／キーボードショートカット使用数／ポップアップ表示回数／サイドパネルを開いた回数／習得済みショートカット数／検知エラー数）</li>
+      <li>初回ポップアップ表示・サイドパネル初回表示・同意設定の変更、といった節目のイベント</li>
+    </ul>
+    <h3>同意の有無にかかわらず、決して送信しない情報</h3>
+    <ul>
+      <li>セルの内容・入力テキスト</li>
+      <li>スプレッドシートのURL・タイトル</li>
+      <li>クリックしたメニューの文言などの画面上のテキスト</li>
+      <li>Googleアカウント情報・氏名・メールアドレス</li>
+      <li>IPアドレス（サーバー側でも保存しません）</li>
+    </ul>
+    <p>サードパーティの分析サービス（Google Analytics 等）は使用しません。送信されたデータは匿名であり、特定の個人と紐付けることはできません。</p>
   </section>
 
   <section>
-    <h2>4. 情報の保存と管理</h2>
+    <h2>5. Pro プランの決済とライセンス確認</h2>
+    <p>有料の Pro プランの決済は、Chrome拡張向け決済サービス <strong>ExtensionPay</strong>（extensionpay.com）および決済代行サービス <strong>Stripe</strong> を通じて行われます。</p>
     <ul>
-      <li>すべてのデータは <strong>Chrome のローカルストレージ（chrome.storage.local）</strong> に保存されます</li>
-      <li>データは外部サーバーに送信されることは<strong>一切ありません</strong></li>
+      <li>クレジットカード情報は Stripe が直接処理し、<strong>本拡張機能がカード情報を受け取ることはありません</strong></li>
+      <li>本拡張機能は、Pro プランの有効状態を確認するために extensionpay.com と通信します。この通信にスプレッドシートの内容や操作データが含まれることはありません</li>
+      <li>決済時に登録するメールアドレスは ExtensionPay / Stripe が管理し、本拡張機能のサーバーには保存されません</li>
+    </ul>
+    <p>詳細は <a href="https://extensionpay.com/privacy" target="_blank" rel="noopener">ExtensionPay のプライバシーポリシー</a>および <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe のプライバシーポリシー</a>をご参照ください。</p>
+  </section>
+
+  <section>
+    <h2>6. 情報の利用目的</h2>
+    <p>収集した情報は、以下の目的にのみ使用します。</p>
+    <ul>
+      <li>ショートカットキーの習得支援および拡張機能の機能提供（ローカルデータ）</li>
+      <li>機能改善・品質向上のための統計分析（オプトインされた匿名統計のみ）</li>
+      <li>Pro プランのライセンス管理（決済関連情報のみ）</li>
+    </ul>
+    <p>収集したデータをマーケティングや広告に利用すること、第三者に販売することはありません。</p>
+  </section>
+
+  <section>
+    <h2>7. 情報の保存と管理</h2>
+    <ul>
+      <li>利用データは <strong>Chrome のローカルストレージ（chrome.storage.local）</strong> に保存されます</li>
       <li>一定期間を経過した古いデータは、拡張機能の起動時に<strong>自動的にクリーンアップ</strong>されます</li>
-      <li>拡張機能をアンインストールすると、すべてのデータが削除されます</li>
+      <li>拡張機能をアンインストールすると、デバイス上のすべてのデータが削除されます</li>
+      <li>オプトインによって送信された匿名統計は、改善分析に必要な期間のみ保持します。匿名のため特定のお客様のデータを遡って特定することはできませんが、削除のご要望は第12条の窓口で受け付けます</li>
     </ul>
   </section>
 
   <section>
-    <h2>5. 第三者への提供</h2>
-    <p>本拡張機能は収集したデータを第三者に提供・販売・共有することはありません。</p>
+    <h2>8. 第三者への提供</h2>
+    <p>本拡張機能は収集したデータを第三者に販売・共有することはありません。サービス提供のため、以下の事業者をデータ処理に利用します。</p>
+    <ul>
+      <li><strong>Cloudflare</strong> — 匿名利用統計の収集サーバーのホスティング（オプトイン時のみ）</li>
+      <li><strong>ExtensionPay / Stripe</strong> — Pro プランの決済処理（購入時のみ）</li>
+    </ul>
   </section>
 
   <section>
-    <h2>6. お客様の権利</h2>
-    <p>Chrome の拡張機能管理ページからいつでも本拡張機能をアンインストールでき、その際すべてのデータが削除されます。</p>
+    <h2>9. お客様の権利と選択</h2>
+    <ul>
+      <li>匿名利用統計の送信は、設定画面から<strong>いつでも停止</strong>できます</li>
+      <li>Chrome の拡張機能管理ページからいつでも本拡張機能をアンインストールでき、その際デバイス上のすべてのデータが削除されます</li>
+    </ul>
   </section>
 
   <section>
-    <h2>7. 対象ページ</h2>
-    <p>本拡張機能は <strong>https://docs.google.com/spreadsheets/*</strong> のURLパターンに一致するページにのみ動作します。その他のWebサイトでは一切動作しません。</p>
+    <h2>10. 対象ページ</h2>
+    <p>本拡張機能は <strong>https://docs.google.com/spreadsheets/*</strong> のURLパターンに一致するページにのみ動作します。その他のWebサイトでは一切動作しません（Pro プランのライセンス確認のための extensionpay.com との通信を除く）。</p>
   </section>
 
   <section>
-    <h2>8. お問い合わせ</h2>
+    <h2>11. 本ポリシーの変更</h2>
+    <p>本ポリシーを変更する場合は、本ページを更新し、最終更新日を改定します。収集する情報の種類が増えるなど重要な変更を行う場合は、拡張機能内でお知らせします。</p>
+  </section>
+
+  <section>
+    <h2>12. お問い合わせ</h2>
     <p>本ポリシーに関するご質問は、Chrome Web Store のサポートページよりお問い合わせください。</p>
   </section>
 
@@ -126,7 +198,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">Last updated: May 29, 2025</p>
+  <p class="updated">Last updated: June 10, 2026</p>
 
   <section>
     <h2>1. Introduction</h2>
@@ -134,8 +206,19 @@
   </section>
 
   <section>
-    <h2>2. Information We Collect</h2>
-    <p>The extension records the following information locally on your device only:</p>
+    <h2>2. Our Principle — No External Transmission by Default</h2>
+    <div class="callout">
+      Your usage data <strong>never leaves your device by default</strong>. External communication happens only in the following two cases:
+    </div>
+    <ul>
+      <li><strong>Anonymous usage statistics (opt-in)</strong> — sent only if you explicitly agree (Section 4)</li>
+      <li><strong>Pro plan payment and license verification</strong> — occurs only if you use the paid plan (Section 5)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3. Information Stored on Your Device</h2>
+    <p>The extension records the following information locally on your device:</p>
     <ul>
       <li><strong>Action type and count</strong> — whether each Sheets operation was performed via mouse or keyboard shortcut</li>
       <li><strong>Daily usage counts</strong> per shortcut action</li>
@@ -145,44 +228,100 @@
   </section>
 
   <section>
-    <h2>3. How We Use the Information</h2>
-    <p>Collected data is used solely to provide the extension's functionality and to help you learn keyboard shortcuts. We do not use your data for marketing, advertising, or any purpose beyond operating the extension.</p>
+    <h2>4. Anonymous Usage Statistics (Opt-in, Optional)</h2>
+    <p>To improve the extension, we send a minimal set of anonymous statistics to a server we operate (hosted on Cloudflare) — <strong>but only if you choose to help</strong>.</p>
+    <h3>Off by default</h3>
+    <ul>
+      <li>Until you opt in, <strong>not a single byte of statistics is transmitted</strong></li>
+      <li>After opting in, you can <strong>turn it off at any time</strong> in the settings</li>
+    </ul>
+    <h3>What is sent if you opt in</h3>
+    <ul>
+      <li>A randomly generated identifier (UUID, unrelated to your Google account)</li>
+      <li>Extension version, OS type, and display language</li>
+      <li>Days since installation</li>
+      <li><strong>Daily aggregate counts</strong> of activity (mouse actions / keyboard shortcut uses / popup displays / side panel opens / mastered shortcuts / detection misses)</li>
+      <li>Milestone events such as first popup shown, first side panel open, and consent changes</li>
+    </ul>
+    <h3>What is never sent, regardless of consent</h3>
+    <ul>
+      <li>Cell contents or typed text</li>
+      <li>Spreadsheet URLs or titles</li>
+      <li>On-screen text such as the labels of menus you click</li>
+      <li>Google account information, your name, or email address</li>
+      <li>IP addresses (not stored on the server either)</li>
+    </ul>
+    <p>We do not use third-party analytics services (such as Google Analytics). The data sent is anonymous and cannot be linked back to any individual.</p>
   </section>
 
   <section>
-    <h2>4. Data Storage and Retention</h2>
+    <h2>5. Pro Plan Payment and License Verification</h2>
+    <p>Payments for the paid Pro plan are processed through <strong>ExtensionPay</strong> (extensionpay.com), a payment service for Chrome extensions, and the payment processor <strong>Stripe</strong>.</p>
     <ul>
-      <li>All data is stored in <strong>Chrome local storage (chrome.storage.local)</strong> on your device</li>
-      <li>Data is <strong>never transmitted</strong> to any external server</li>
+      <li>Credit card details are handled directly by Stripe — <strong>the extension never receives your card information</strong></li>
+      <li>The extension communicates with extensionpay.com to verify your Pro plan status. This communication never includes spreadsheet contents or your activity data</li>
+      <li>The email address you register at checkout is managed by ExtensionPay / Stripe and is not stored on our servers</li>
+    </ul>
+    <p>For details, see the <a href="https://extensionpay.com/privacy" target="_blank" rel="noopener">ExtensionPay Privacy Policy</a> and the <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe Privacy Policy</a>.</p>
+  </section>
+
+  <section>
+    <h2>6. How We Use the Information</h2>
+    <p>Collected data is used solely for the following purposes:</p>
+    <ul>
+      <li>Providing the extension's functionality and helping you learn keyboard shortcuts (local data)</li>
+      <li>Statistical analysis to improve the product (opt-in anonymous statistics only)</li>
+      <li>Pro plan license management (payment-related information only)</li>
+    </ul>
+    <p>We do not use your data for marketing or advertising, and we never sell it to third parties.</p>
+  </section>
+
+  <section>
+    <h2>7. Data Storage and Retention</h2>
+    <ul>
+      <li>Usage data is stored in <strong>Chrome local storage (chrome.storage.local)</strong> on your device</li>
       <li>Old data beyond the retention period is <strong>automatically cleaned up</strong> each time the extension runs</li>
-      <li>Uninstalling the extension removes all stored data</li>
+      <li>Uninstalling the extension removes all data stored on your device</li>
+      <li>Anonymous statistics sent via opt-in are retained only as long as needed for product analysis. Because the data is anonymous, we cannot identify a specific user's records retroactively, but deletion requests are accepted via the contact channel in Section 12</li>
     </ul>
   </section>
 
   <section>
-    <h2>5. Third-Party Sharing</h2>
-    <p>We do not sell, share, or disclose collected data to any third parties.</p>
+    <h2>8. Third-Party Sharing</h2>
+    <p>We do not sell or share collected data with third parties. We use the following service providers to operate the product:</p>
+    <ul>
+      <li><strong>Cloudflare</strong> — hosting for the anonymous statistics collection server (opt-in only)</li>
+      <li><strong>ExtensionPay / Stripe</strong> — payment processing for the Pro plan (at purchase only)</li>
+    </ul>
   </section>
 
   <section>
-    <h2>6. Your Rights</h2>
-    <p>You may uninstall the extension at any time from Chrome's extension management page. All data will be removed upon uninstallation.</p>
+    <h2>9. Your Rights and Choices</h2>
+    <ul>
+      <li>You can <strong>stop sending anonymous usage statistics at any time</strong> from the settings</li>
+      <li>You may uninstall the extension at any time from Chrome's extension management page; all data on your device will be removed</li>
+    </ul>
   </section>
 
   <section>
-    <h2>7. Scope</h2>
-    <p>This extension operates exclusively on pages matching <strong>https://docs.google.com/spreadsheets/*</strong>. It does not run on any other website.</p>
+    <h2>10. Scope</h2>
+    <p>This extension operates exclusively on pages matching <strong>https://docs.google.com/spreadsheets/*</strong>. It does not run on any other website (apart from communication with extensionpay.com for Pro license verification).</p>
   </section>
 
   <section>
-    <h2>8. Contact</h2>
+    <h2>11. Changes to This Policy</h2>
+    <p>When we change this policy, we will update this page and revise the "Last updated" date. For material changes — such as collecting new categories of data — we will notify you within the extension.</p>
+  </section>
+
+  <section>
+    <h2>12. Contact</h2>
     <p>For questions about this policy, please contact us via the Chrome Web Store support page.</p>
   </section>
 
 </div>
 
 <footer>
-  &copy; 2025 MasterKey. All rights reserved.
+  &copy; 2026 MasterKey. All rights reserved.
 </footer>
 
 </body>
