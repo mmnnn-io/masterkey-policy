@@ -109,6 +109,9 @@
       <li>拡張機能のバージョン・OS種別・表示言語</li>
       <li>インストールからの経過日数</li>
       <li>操作回数の<strong>日次集計値</strong>（マウス操作数／キーボードショートカット使用数／ポップアップ表示回数／サイドパネルを開いた回数／習得済みショートカット数／検知エラー数）</li>
+      <li><strong>ショートカット別の操作回数内訳</strong>（前日のショートカットIDごとのマウス操作数・キーボード操作数の匿名カウント）</li>
+      <li><strong>未検出クリックのシグネチャ</strong>（クリック種別・要素ID・aria-label を結合した匿名識別子。クリックしたメニュー文言は含みません）</li>
+      <li><strong>設定変更・ミュート操作</strong>（ポップアップON/OFFや表示位置などの設定変更、ショートカットのミュートのON/OFFを匿名カウント）</li>
       <li>初回ポップアップ表示・サイドパネル初回表示・同意設定の変更、といった節目のイベント</li>
     </ul>
     <h3>設定にかかわらず、決して送信しない情報</h3>
@@ -129,6 +132,8 @@
       <li>クレジットカード情報は Stripe が直接処理し、<strong>本拡張機能がカード情報を受け取ることはありません</strong></li>
       <li>本拡張機能は、Pro プランの有効状態を確認するために extensionpay.com と通信します。この通信にスプレッドシートの内容や操作データが含まれることはありません</li>
       <li>決済時に登録するメールアドレスは ExtensionPay / Stripe が管理し、本拡張機能のサーバーには保存されません</li>
+      <li><strong>Pro をご購入・トライアルを開始された場合</strong>、サポートと製品改善のため、匿名の利用ID（clientId）をご契約（ExtensionPay）に関連付けます。この関連付けは匿名利用統計とは別に保存し、メールアドレスやカード情報を当社サーバーに保存することはありません</li>
+      <li><strong>トライアルの開始・Pro のご利用に伴い、匿名の利用統計が有効になります</strong>（設定画面からいつでも確認できます。第4条）</li>
     </ul>
     <p>詳細は <a href="https://extensionpay.com/privacy" target="_blank" rel="noopener">ExtensionPay のプライバシーポリシー</a>および <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe のプライバシーポリシー</a>をご参照ください。</p>
   </section>
@@ -168,6 +173,7 @@
     <ul>
       <li>匿名利用統計の送信は、設定画面から<strong>いつでも停止</strong>できます</li>
       <li>Chrome の拡張機能管理ページからいつでも本拡張機能をアンインストールでき、その際デバイス上のすべてのデータが削除されます</li>
+      <li>Pro 契約に関連付けられた匿名利用IDの関連付けデータも、第12条の窓口を通じて<strong>削除をご請求いただけます</strong></li>
     </ul>
   </section>
 
@@ -241,6 +247,9 @@
       <li>Extension version, OS type, and display language</li>
       <li>Days since installation</li>
       <li><strong>Daily aggregate counts</strong> of activity (mouse actions / keyboard shortcut uses / popup displays / side panel opens / mastered shortcuts / detection misses)</li>
+      <li><strong>Per-shortcut action counts</strong> — anonymous counts of mouse and keyboard actions per shortcut ID for the previous day</li>
+      <li><strong>Undetected-click signatures</strong> — an anonymous identifier composed of click type, element ID, and aria-label (menu text you clicked is never included)</li>
+      <li><strong>Setting changes and mute actions</strong> — anonymous counts of setting changes (e.g. popup on/off, position) and shortcut mute toggles</li>
       <li>Milestone events such as first popup shown, first side panel open, and consent changes</li>
     </ul>
     <h3>What is never sent, regardless of this setting</h3>
@@ -261,6 +270,8 @@
       <li>Credit card details are handled directly by Stripe — <strong>the extension never receives your card information</strong></li>
       <li>The extension communicates with extensionpay.com to verify your Pro plan status. This communication never includes spreadsheet contents or your activity data</li>
       <li>The email address you register at checkout is managed by ExtensionPay / Stripe and is not stored on our servers</li>
+      <li><strong>If you purchase Pro or start a free trial</strong>, we associate your anonymous usage ID (clientId) with your contract (ExtensionPay) for support and product improvement. This association is stored separately from the anonymous usage statistics, and your email address and card information are never stored on our servers</li>
+      <li><strong>Starting a trial or using Pro enables anonymous usage statistics</strong> (you can review this anytime in Settings — see Section 4)</li>
     </ul>
     <p>For details, see the <a href="https://extensionpay.com/privacy" target="_blank" rel="noopener">ExtensionPay Privacy Policy</a> and the <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe Privacy Policy</a>.</p>
   </section>
@@ -300,6 +311,7 @@
     <ul>
       <li>You can <strong>stop sending anonymous usage statistics at any time</strong> from the settings</li>
       <li>You may uninstall the extension at any time from Chrome's extension management page; all data on your device will be removed</li>
+      <li>The association data linking your anonymous usage ID to a Pro contract <strong>can also be deleted on request</strong> via the contact channel in Section 12</li>
     </ul>
   </section>
 
