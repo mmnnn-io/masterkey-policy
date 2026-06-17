@@ -66,7 +66,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">最終更新日：2026年6月10日</p>
+  <p class="updated">最終更新日：2026年6月17日</p>
 
   <section>
     <h2>1. はじめに</h2>
@@ -74,12 +74,12 @@
   </section>
 
   <section>
-    <h2>2. 基本方針 — デフォルトでは外部送信なし</h2>
+    <h2>2. 基本方針 — あなたのデータはデバイスから出ません</h2>
     <div class="callout">
-      あなたの利用データは<strong>初期設定ではデバイスの外に一切送信されません</strong>。外部との通信が発生するのは、次の2つの場合に限られます。
+      セルの内容・入力テキスト・個人を特定できる情報は<strong>一切デバイスの外に送信されません</strong>。外部との通信が発生するのは、次の2つの場合に限られます。
     </div>
     <ul>
-      <li><strong>匿名の利用統計（オプトイン）</strong> — あなたが明示的に同意した場合にのみ送信されます（第4条）</li>
+      <li><strong>匿名の利用統計</strong> — 製品改善のため、操作回数などの匿名の数値を<strong>初期設定で送信します</strong>。設定画面から<strong>いつでもオフ</strong>にできます（第4条）</li>
       <li><strong>Pro プランの決済とライセンス確認</strong> — 有料プランをご利用の場合のみ発生します（第5条）</li>
     </ul>
   </section>
@@ -96,14 +96,14 @@
   </section>
 
   <section>
-    <h2>4. 匿名の利用統計（オプトイン・任意）</h2>
-    <p>本拡張機能の改善のため、<strong>匿名の利用統計の送信にご協力いただける場合のみ</strong>、最小限の統計データを当方が運用するサーバー（Cloudflare 上でホスト）に送信します。</p>
-    <h3>初期設定はオフです</h3>
+    <h2>4. 匿名の利用統計（初期設定で有効・任意でオフ）</h2>
+    <p>本拡張機能の改善のため、最小限の<strong>匿名</strong>の統計データを当方が運用するサーバー（Cloudflare 上でホスト）に<strong>初期設定で送信します</strong>。送信されるのは操作回数などの数値のみで、あなたを特定することはできません。</p>
+    <h3>いつでもオフにできます</h3>
     <ul>
-      <li>同意するまで、統計データは<strong>1バイトも送信されません</strong></li>
-      <li>同意した後も、設定画面から<strong>いつでもオフ</strong>にできます</li>
+      <li>オンボーディング画面、または設定画面から<strong>いつでもオフ</strong>にできます</li>
+      <li>オフにすると、それ以降は統計データを<strong>1バイトも送信しません</strong></li>
     </ul>
-    <h3>同意した場合に送信される情報</h3>
+    <h3>送信される情報</h3>
     <ul>
       <li>ランダムに生成された識別子（UUID。Googleアカウント等とは無関係）</li>
       <li>拡張機能のバージョン・OS種別・表示言語</li>
@@ -111,7 +111,7 @@
       <li>操作回数の<strong>日次集計値</strong>（マウス操作数／キーボードショートカット使用数／ポップアップ表示回数／サイドパネルを開いた回数／習得済みショートカット数／検知エラー数）</li>
       <li>初回ポップアップ表示・サイドパネル初回表示・同意設定の変更、といった節目のイベント</li>
     </ul>
-    <h3>同意の有無にかかわらず、決して送信しない情報</h3>
+    <h3>設定にかかわらず、決して送信しない情報</h3>
     <ul>
       <li>セルの内容・入力テキスト</li>
       <li>スプレッドシートのURL・タイトル</li>
@@ -138,7 +138,7 @@
     <p>収集した情報は、以下の目的にのみ使用します。</p>
     <ul>
       <li>ショートカットキーの習得支援および拡張機能の機能提供（ローカルデータ）</li>
-      <li>機能改善・品質向上のための統計分析（オプトインされた匿名統計のみ）</li>
+      <li>機能改善・品質向上のための統計分析（匿名統計のみ）</li>
       <li>Pro プランのライセンス管理（決済関連情報のみ）</li>
     </ul>
     <p>収集したデータをマーケティングや広告に利用すること、第三者に販売することはありません。</p>
@@ -150,7 +150,7 @@
       <li>利用データは <strong>Chrome のローカルストレージ（chrome.storage.local）</strong> に保存されます</li>
       <li>一定期間を経過した古いデータは、拡張機能の起動時に<strong>自動的にクリーンアップ</strong>されます</li>
       <li>拡張機能をアンインストールすると、デバイス上のすべてのデータが削除されます</li>
-      <li>オプトインによって送信された匿名統計は、改善分析に必要な期間のみ保持します。匿名のため特定のお客様のデータを遡って特定することはできませんが、削除のご要望は第12条の窓口で受け付けます</li>
+      <li>送信された匿名統計は、改善分析に必要な期間のみ保持します。匿名のため特定のお客様のデータを遡って特定することはできませんが、削除のご要望は第12条の窓口で受け付けます</li>
     </ul>
   </section>
 
@@ -158,7 +158,7 @@
     <h2>8. 第三者への提供</h2>
     <p>本拡張機能は収集したデータを第三者に販売・共有することはありません。サービス提供のため、以下の事業者をデータ処理に利用します。</p>
     <ul>
-      <li><strong>Cloudflare</strong> — 匿名利用統計の収集サーバーのホスティング（オプトイン時のみ）</li>
+      <li><strong>Cloudflare</strong> — 匿名利用統計の収集サーバーのホスティング（オフにしていない場合）</li>
       <li><strong>ExtensionPay / Stripe</strong> — Pro プランの決済処理（購入時のみ）</li>
     </ul>
   </section>
@@ -198,7 +198,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">Last updated: June 10, 2026</p>
+  <p class="updated">Last updated: June 17, 2026</p>
 
   <section>
     <h2>1. Introduction</h2>
@@ -206,12 +206,12 @@
   </section>
 
   <section>
-    <h2>2. Our Principle — No External Transmission by Default</h2>
+    <h2>2. Our Principle — Your Data Stays on Your Device</h2>
     <div class="callout">
-      Your usage data <strong>never leaves your device by default</strong>. External communication happens only in the following two cases:
+      Your cell contents, typed text, and any personally identifiable information <strong>never leave your device</strong>. External communication happens only in the following two cases:
     </div>
     <ul>
-      <li><strong>Anonymous usage statistics (opt-in)</strong> — sent only if you explicitly agree (Section 4)</li>
+      <li><strong>Anonymous usage statistics</strong> — to improve the product, anonymous counts are <strong>sent by default</strong>. You can <strong>turn this off at any time</strong> in the settings (Section 4)</li>
       <li><strong>Pro plan payment and license verification</strong> — occurs only if you use the paid plan (Section 5)</li>
     </ul>
   </section>
@@ -228,14 +228,14 @@
   </section>
 
   <section>
-    <h2>4. Anonymous Usage Statistics (Opt-in, Optional)</h2>
-    <p>To improve the extension, we send a minimal set of anonymous statistics to a server we operate (hosted on Cloudflare) — <strong>but only if you choose to help</strong>.</p>
-    <h3>Off by default</h3>
+    <h2>4. Anonymous Usage Statistics (On by Default, Optional)</h2>
+    <p>To improve the extension, we send a minimal set of <strong>anonymous</strong> statistics to a server we operate (hosted on Cloudflare) <strong>by default</strong>. Only counts are sent, and they cannot be used to identify you.</p>
+    <h3>You can turn it off anytime</h3>
     <ul>
-      <li>Until you opt in, <strong>not a single byte of statistics is transmitted</strong></li>
-      <li>After opting in, you can <strong>turn it off at any time</strong> in the settings</li>
+      <li>You can <strong>turn it off at any time</strong> from the onboarding screen or the settings</li>
+      <li>Once off, <strong>not a single byte of statistics is transmitted</strong> from then on</li>
     </ul>
-    <h3>What is sent if you opt in</h3>
+    <h3>What is sent</h3>
     <ul>
       <li>A randomly generated identifier (UUID, unrelated to your Google account)</li>
       <li>Extension version, OS type, and display language</li>
@@ -243,7 +243,7 @@
       <li><strong>Daily aggregate counts</strong> of activity (mouse actions / keyboard shortcut uses / popup displays / side panel opens / mastered shortcuts / detection misses)</li>
       <li>Milestone events such as first popup shown, first side panel open, and consent changes</li>
     </ul>
-    <h3>What is never sent, regardless of consent</h3>
+    <h3>What is never sent, regardless of this setting</h3>
     <ul>
       <li>Cell contents or typed text</li>
       <li>Spreadsheet URLs or titles</li>
@@ -270,7 +270,7 @@
     <p>Collected data is used solely for the following purposes:</p>
     <ul>
       <li>Providing the extension's functionality and helping you learn keyboard shortcuts (local data)</li>
-      <li>Statistical analysis to improve the product (opt-in anonymous statistics only)</li>
+      <li>Statistical analysis to improve the product (anonymous statistics only)</li>
       <li>Pro plan license management (payment-related information only)</li>
     </ul>
     <p>We do not use your data for marketing or advertising, and we never sell it to third parties.</p>
@@ -282,7 +282,7 @@
       <li>Usage data is stored in <strong>Chrome local storage (chrome.storage.local)</strong> on your device</li>
       <li>Old data beyond the retention period is <strong>automatically cleaned up</strong> each time the extension runs</li>
       <li>Uninstalling the extension removes all data stored on your device</li>
-      <li>Anonymous statistics sent via opt-in are retained only as long as needed for product analysis. Because the data is anonymous, we cannot identify a specific user's records retroactively, but deletion requests are accepted via the contact channel in Section 12</li>
+      <li>Anonymous statistics that are sent are retained only as long as needed for product analysis. Because the data is anonymous, we cannot identify a specific user's records retroactively, but deletion requests are accepted via the contact channel in Section 12</li>
     </ul>
   </section>
 
@@ -290,7 +290,7 @@
     <h2>8. Third-Party Sharing</h2>
     <p>We do not sell or share collected data with third parties. We use the following service providers to operate the product:</p>
     <ul>
-      <li><strong>Cloudflare</strong> — hosting for the anonymous statistics collection server (opt-in only)</li>
+      <li><strong>Cloudflare</strong> — hosting for the anonymous statistics collection server (unless turned off)</li>
       <li><strong>ExtensionPay / Stripe</strong> — payment processing for the Pro plan (at purchase only)</li>
     </ul>
   </section>
