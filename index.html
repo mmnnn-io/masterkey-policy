@@ -66,7 +66,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">最終更新日：2026年6月17日</p>
+  <p class="updated">最終更新日：2026年7月29日</p>
 
   <section>
     <h2>1. はじめに</h2>
@@ -110,7 +110,7 @@
       <li>インストールからの経過日数</li>
       <li>操作回数の<strong>日次集計値</strong>（マウス操作数／キーボードショートカット使用数／ポップアップ表示回数／サイドパネルを開いた回数／習得済みショートカット数／検知エラー数）</li>
       <li><strong>ショートカット別の操作回数内訳</strong>（前日のショートカットIDごとのマウス操作数・キーボード操作数の匿名カウント）</li>
-      <li><strong>未検出クリックのシグネチャ</strong>（クリック種別・要素ID・aria-label を結合した匿名識別子。クリックしたメニュー文言は含みません）</li>
+      <li><strong>未検出クリックのシグネチャ</strong>（クリック種別・要素ID・aria-label・<strong>メニューの経路</strong>を結合した匿名識別子。メニューの経路とは「どのメニュー（ファイル／データ等）を開いた何段目か」という画面構造の情報で、<strong>クリックしたメニュー文言は含みません</strong>）</li>
       <li><strong>設定変更・ミュート操作</strong>（ポップアップON/OFFや表示位置などの設定変更、ショートカットのミュートのON/OFFを匿名カウント）</li>
       <li>初回ポップアップ表示・サイドパネル初回表示・同意設定の変更、といった節目のイベント</li>
     </ul>
@@ -204,7 +204,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">Last updated: June 17, 2026</p>
+  <p class="updated">Last updated: July 29, 2026</p>
 
   <section>
     <h2>1. Introduction</h2>
@@ -248,7 +248,7 @@
       <li>Days since installation</li>
       <li><strong>Daily aggregate counts</strong> of activity (mouse actions / keyboard shortcut uses / popup displays / side panel opens / mastered shortcuts / detection misses)</li>
       <li><strong>Per-shortcut action counts</strong> — anonymous counts of mouse and keyboard actions per shortcut ID for the previous day</li>
-      <li><strong>Undetected-click signatures</strong> — an anonymous identifier composed of click type, element ID, and aria-label (menu text you clicked is never included)</li>
+      <li><strong>Undetected-click signatures</strong> — an anonymous identifier composed of click type, element ID, aria-label, and the <strong>menu route</strong>. The menu route is UI-structure information only: which menu (File, Data, …) was open and how many levels deep the click was. <strong>The menu text you clicked is never included.</strong></li>
       <li><strong>Setting changes and mute actions</strong> — anonymous counts of setting changes (e.g. popup on/off, position) and shortcut mute toggles</li>
       <li>Milestone events such as first popup shown, first side panel open, and consent changes</li>
     </ul>
