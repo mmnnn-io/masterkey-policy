@@ -66,7 +66,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">最終更新日：2026年7月30日</p>
+  <p class="updated">最終更新日：2026年9月20日</p>
 
   <section>
     <h2>1. はじめに</h2>
@@ -112,6 +112,9 @@
       <li><strong>ショートカット別の操作回数内訳</strong>（前日のショートカットIDごとのマウス操作数・キーボード操作数の匿名カウント）</li>
       <li><strong>未検出クリックのシグネチャ</strong>（クリック種別・要素ID・aria-label・<strong>メニューの経路</strong>を結合した匿名識別子。メニューの経路とは「どのメニュー（ファイル／データ等）を開いた何段目か」という画面構造の情報で、<strong>クリックしたメニュー文言は含みません</strong>）</li>
       <li><strong>設定変更・ミュート操作</strong>（ポップアップON/OFFや表示位置などの設定変更、ショートカットのミュートのON/OFFを匿名カウント）</li>
+      <li><strong>画面に出した案内への反応</strong>（v0.3.3以降）— 画面の隅に出す案内（操作名とキーの帯）を<strong>出した回数・押した回数</strong>、および「覚えました」の案内を出した回数の匿名カウント</li>
+      <li><strong>習得までの日数</strong>（v0.3.3以降）— あるショートカットを最初に記録してから習得と判定するまでの<strong>日数</strong>。日付そのものは含みません</li>
+      <li><strong>画面表示の切り替え</strong>（v0.3.3以降）— 付箋の表示（付箋／通知のみ／表示しない）を切り替えたときに、<strong>切り替え前後の状態</strong>・<strong>どこで切り替えたか</strong>（付箋／設定／更新時の自動切替）と、そのとき<strong>練習中だったショートカットID</strong>を送信します。どの操作が使いにくいと感じられているかを知るためのもので、<strong>ショートカットIDは上記の内訳で既に送信しているものと同じ種類の情報</strong>です</li>
       <li>初回ポップアップ表示・サイドパネル初回表示・同意設定の変更、といった節目のイベント</li>
       <li><strong>1日1回の稼働確認</strong>（v0.2.8以降）— 本拡張機能が有効なままかどうかを把握するため、<strong>スプレッドシートを開いていない日も1日1回だけ</strong>、次の情報を送信します：最後にスプレッドシートを開いてからの<strong>日数</strong>、最後に統計を送信してからの<strong>日数</strong>、ポップアップ表示のON/OFF、スプレッドシートへのアクセス許可の有無。<strong>日付や時刻、閲覧していたページ、操作内容は含みません</strong>（送信する日数は、たとえば「3日前」のような粒度の数値です）。統計をオフにしている場合は送信しません</li>
     </ul>
@@ -205,7 +208,7 @@
     <a href="#en">English</a>
   </div>
 
-  <p class="updated">Last updated: July 29, 2026</p>
+  <p class="updated">Last updated: September 20, 2026</p>
 
   <section>
     <h2>1. Introduction</h2>
@@ -251,6 +254,9 @@
       <li><strong>Per-shortcut action counts</strong> — anonymous counts of mouse and keyboard actions per shortcut ID for the previous day</li>
       <li><strong>Undetected-click signatures</strong> — an anonymous identifier composed of click type, element ID, aria-label, and the <strong>menu route</strong>. The menu route is UI-structure information only: which menu (File, Data, …) was open and how many levels deep the click was. <strong>The menu text you clicked is never included.</strong></li>
       <li><strong>Setting changes and mute actions</strong> — anonymous counts of setting changes (e.g. popup on/off, position) and shortcut mute toggles</li>
+      <li><strong>Responses to on-screen prompts</strong> (v0.3.3 and later) — anonymous counts of how often the on-screen prompt (the bar showing an action name and its keys) was <strong>shown and pressed</strong>, and how often the "Learned" prompt was shown</li>
+      <li><strong>Days to mastery</strong> (v0.3.3 and later) — the <strong>number of days</strong> between the first recorded use of a shortcut and the point it is judged learned. No calendar dates are included</li>
+      <li><strong>Display-mode changes</strong> (v0.3.3 and later) — when you switch how the note is shown (note / alerts only / off), we send the <strong>state before and after</strong>, <strong>where the change was made</strong> (the note, the settings, or the automatic switch on update), and the <strong>shortcut IDs you were practising</strong> at that moment. This tells us which actions feel unhelpful; the <strong>shortcut IDs are the same kind of information already sent</strong> in the per-shortcut breakdown above</li>
       <li>Milestone events such as first popup shown, first side panel open, and consent changes</li>
     </ul>
     <h3>What is never sent, regardless of this setting</h3>
